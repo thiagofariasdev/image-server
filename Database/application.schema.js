@@ -1,7 +1,10 @@
 const Mongoose = require("./../Helpers/db");
 
 const appSchema = Mongoose.Schema({
-  _id: Mongoose.Types.ObjectId,
+  id: {
+    type: String,
+    unique: true
+  },
   name: String,
   createdAt: {
     type: Date,

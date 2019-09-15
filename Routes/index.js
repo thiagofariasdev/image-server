@@ -1,13 +1,16 @@
 const { Router } = require("express");
 const route = Router();
 const ImageController = require("./../Controllers/ImageController");
+const ApplicationController = require("./../Controllers/ApplicationController");
 
-route.post("/image/save/:app", ImageController.saveImage);
+route.get("/image/save/:app", ImageController.saveImage);
 
-route.get("/image-count/:mime", ImageController.countImages);
+route.get("/image/count/:app", ImageController.countImages);
 
-route.get("/images/list-mime/:mime", ImageController.getImages);
+route.get("/image/list/:app", ImageController.getImages);
 
 route.get("/image/find", ImageController.findImage);
+
+route.get("/application/create", ApplicationController.createApp);
 
 module.exports = route;
